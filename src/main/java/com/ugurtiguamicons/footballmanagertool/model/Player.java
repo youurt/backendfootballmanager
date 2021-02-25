@@ -11,16 +11,20 @@ public class Player implements Serializable {
     private Long id;
     private String name;
     private Float salary;
+    private String team;
     private String position;
+    private String pictureUrl;
     @Column(nullable = false, updatable = false)
     private String playerCode;
 
     public Player() {}
 
-    public Player(String name, Float salary, String position, String playerCode){
+    public Player(String name, Float salary, String position, String pictureUrl, String team, String playerCode){
         this.name = name;
         this.salary = salary;
         this.position = position;
+        this.team = team;
+        this.pictureUrl = pictureUrl;
         this.playerCode = playerCode;
     }
 
@@ -54,6 +58,22 @@ public class Player implements Serializable {
 
     public void setPosition(String position){
         this.position = position;
+    }
+
+    public String getTeam(){
+        return team;
+    }
+
+    public void setTeam(String team){
+        this.team = team;
+    }
+
+    public String getPictureUrl(){
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl){
+        this.pictureUrl = pictureUrl;
     }
 
     public String getPlayerCode() {
