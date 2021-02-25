@@ -14,16 +14,18 @@ public class Player implements Serializable {
     private String team;
     private String position;
     private String pictureUrl;
+    private Float transferValue;
     @Column(nullable = false, updatable = false)
     private String playerCode;
 
     public Player() {}
 
-    public Player(String name, Float salary, String position, String pictureUrl, String team, String playerCode){
+    public Player(String name, Float salary, String position, String pictureUrl,Float transferValue,  String team, String playerCode){
         this.name = name;
         this.salary = salary;
         this.position = position;
         this.team = team;
+        this.transferValue = transferValue;
         this.pictureUrl = pictureUrl;
         this.playerCode = playerCode;
     }
@@ -50,6 +52,14 @@ public class Player implements Serializable {
 
     public void setSalary(Float salary){
         this.salary = salary;
+    }
+
+    public Float getTransferValue(){
+        return transferValue;
+    }
+
+    public void setTransferValue(Float transferValue){
+        this.transferValue = transferValue;
     }
 
     public String getPosition(){
